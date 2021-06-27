@@ -2,17 +2,36 @@ import java.util.Scanner;
 public class yuchan01 {
     public static void main(String[] args)
     {
-        //시작단과 마지막 단을 입력하면
+        //n이 입력되면 다음 삼각형을 출력하시오.
         //
-        //그 구간의 구구단을 출력하는 프로그램을 작성하시오.
+        //예) n = 4
+        //
+        //*
+        //**
+        //***
+        //****
+        //***
+        //**
+        //*
         Scanner sc=new Scanner(System.in);
         int n=sc.nextInt();
-        int num=sc.nextInt();
-        for(int i=n ; i<=num ;i++)
+        for(int i=1 ; i<=n*2 ;i++)
         {
-            for(int j=1 ;j<10 ;j++)
+            if(i<=n)
             {
-                System.out.printf("%d * %d = %d ",i,j,i*j);
+                for(int j=1; j<=i ;j++)
+                {
+                    System.out.printf("*");
+                }
+                System.out.println();
+            }
+
+            else
+            {
+                for(int k=i ; k<n*2;k++)
+                {
+                    System.out.printf("*");
+                }
                 System.out.println();
             }
         }
