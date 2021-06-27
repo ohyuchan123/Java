@@ -2,38 +2,31 @@ import java.util.Scanner;
 public class yuchan01 {
     public static void main(String[] args)
     {
-        //n이 입력되면 다음 삼각형을 출력하시오.
+        //빨강(red), 초록(green), 파랑(blue) 빛을 섞어
+        //여러 가지 빛의 색을 만들어 내려고 한다.
         //
-        //예) n = 4
+        //빨강(r), 초록(g), 파랑(b) 각각의 빛의 개수가 주어질 때,
+        //(빛의 강약에 따라 0 ~ n-1 까지 n가지의 빛 색깔을 만들 수 있다.)
         //
-        //*
-        //**
-        //***
-        //****
-        //***
-        //**
-        //*
+        //주어진 rgb 빛들을 다르게 섞어 만들 수 있는 모든 경우의 조합(r g b)과
+        //총 가짓 수를 계산해보자.
         Scanner sc=new Scanner(System.in);
         int n=sc.nextInt();
-        for(int i=1 ; i<=n*2 ;i++)
+        int u=sc.nextInt();
+        int m=sc.nextInt();
+        for(int i=0 ;i<n ;i++)
         {
-            if(i<=n)
+            for(int j=0 ;j<u ;j++)
             {
-                for(int j=1; j<=i ;j++)
+                for(int k=0;k<m ;k++)
                 {
-                    System.out.printf("*");
+                    System.out.print(n);
+                    System.out.print(u);
+                    System.out.print(m);
+                    System.out.println();
                 }
-                System.out.println();
-            }
-
-            else
-            {
-                for(int k=i ; k<n*2;k++)
-                {
-                    System.out.printf("*");
-                }
-                System.out.println();
             }
         }
+        System.out.println(n*u*m);
     }
 }
