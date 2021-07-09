@@ -1,4 +1,5 @@
 public class Main {
+    /*화면 출력*/
     public static final int SCREEN_WIDTH;
     static
     {
