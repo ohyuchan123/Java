@@ -16,7 +16,7 @@ public class Music extends Thread{
     {
         try{
             this.isLoop=isLoop;
-            file=new File(Main.class.getResource("/music/피하기브금.mp3").toURI());
+            file=new File(Main.class.getResource("/music/피하기브금3.mp3").toURI());
             fis=new FileInputStream(file);
             bis=new BufferedInputStream(fis);
             player=new Player(bis);
