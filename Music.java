@@ -1,47 +1,42 @@
-/*음악*/
+package com.company;
+
 import javazoom.jl.player.Player;
 
-import java.io.File;
 import java.io.BufferedInputStream;
+import java.io.File;
 import java.io.FileInputStream;
 
-public class Music extends Thread{
+public class Music extends Thread {
     private Player player;
+    /*현재 곡이 무한 반복인지 한번만 반복인지 확인 시켜주는 함수*/
     private boolean isLoop;
     private File file;
     private FileInputStream fis;
     private BufferedInputStream bis;
 
-    public Music(String name,boolean isLoop)
-    {
+    public Music(String name, boolean isLoop){
         try{
             this.isLoop=isLoop;
-            file=new File(Main.class.getResource("/music/피하기브금3.mp3").toURI());
-            fis=new FileInputStream(file);
-            bis=new BufferedInputStream(fis);
-            player=new Player(bis);
-        }catch (Exception e)
-        {
+            file = new File(Main.class.getResource("/music/배경음악.mp3").toURI());
+            fis = new FileInputStream(file);
+            bis = new BufferedInputStream(fis);
+            player = new Player(bis);
+        }catch (Exception e){
             System.out.println(e.getMessage());
         }
     }
-    public int getTime()
-    {
+    public int getTime(){
         if(player==null)
-        {
             return 0;
-        }
         return player.getPosition();
     }
-    public void close()
-    {
+    public void close(){
         isLoop=false;
         player.close();
         this.interrupt();
     }
     @Override
-    public void run()
-    {
+    public void run(){
         try{
             do{
                 player.play();
@@ -49,8 +44,7 @@ public class Music extends Thread{
                 bis=new BufferedInputStream(fis);
                 player=new Player(bis);
             }while(isLoop);
-        }catch(Exception e)
-        {
+        }catch(Exception e){
             System.out.println(e.getMessage());
         }
     }
