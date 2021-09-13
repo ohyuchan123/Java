@@ -8,12 +8,14 @@ class Circle{
 		this.color=color;
 	}
 	public Circle(double radius) {
-		this.radius=radius;
-		color="¹ÎÆ®";
+		//this.radius=radius;
+		//color="¹ÎÆ®";
+		this(radius,"¹ÎÆ®");
 	}
 	public Circle(String color) {
-		radius=3.14;
-		this.color=color;
+//		radius=3.14;
+//		this.color=color;
+		this(6.6,color);
 	}
 	void print()
 	{
@@ -34,6 +36,7 @@ public class CircleDemo {
 		c3.print();
 		
 		Circle c4=new Circle("È¸»ö");
+//		c4.radius=6.6;
 		c4.print();
 		
 	}
