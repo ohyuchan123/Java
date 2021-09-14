@@ -1,5 +1,7 @@
 package Chap04;
 
+//this. 과 this()에 대허서
+
 class Circle{
 	double radius;
 	String color;
