@@ -1,5 +1,8 @@
 package Chap04;
 
+
+//연속 호출
+
 class Person{
 	String name;
 	int age;
