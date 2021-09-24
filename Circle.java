@@ -1,4 +1,4 @@
-package Chap05;
+package Chap06;
 
 public class Circle {
 	private void secret() {
